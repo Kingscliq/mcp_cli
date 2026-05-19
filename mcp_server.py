@@ -58,8 +58,8 @@ def fetch_doc(doc_id: str) -> str:
         raise ValueError(f"Document with id {doc_id} not found")
     else:
         return docs[doc_id]
-# TODO: Write a prompt to rewrite a doc in markdown format
-
+    
+# A prompt to rewrite a doc in markdown format
 @mcp.prompt(name="format", description="Convert a document's content into well-structured markdown format")
 def format_document(doc_id: str = Field(description="The filename of the document to format, e.g. 'deposition.md'")) -> list[Message]:
     if doc_id not in docs:
